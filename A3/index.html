@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+       a {
+        text-decoration: none;
+        color: black;
+        position: relative;
+       }
+       a::after {
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        background-color: yellow;
+        width: 0;
+        height: 3px;
+        transition: all 0.3s ease;
+        content: "";
+       }
+       a:hover::after {
+        width: 100%;
+       }
+       a:active {
+        background-color: yellow;
+       }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       <a href="#">Link Para...</a>
+    </div>
+</body>
+</html>
