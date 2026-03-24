@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 15px;
+            background-color: yellow;
+            border: 2px solid black;
+            border-radius: 5px;
+            box-shadow: 7px 7px 0 black;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            box-shadow: 10px 15px 0 black;
+        }
+        button:active {
+            transform: translate(10px, 15px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button>Press This</button>
+        <button>Press This</button>
+        <button>Press This</button>
+    </div>
+</body>
+</html>
