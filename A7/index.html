@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A7</title>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            cursor: none;
+        }
+        #cursor {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            mix-blend-mode: difference;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="container"></div>
+    <script>
+        const cursor = document.getElementById("cursor");
+        let str = "";
+        for (let i = 0; i < 500; i++) {
+            str += "Hello World ";
+        }
+        document.getElementById("container").textContent = str;
+
+        window.addEventListener("mousemove", (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            cursor.style.transform = `translate(${x}px, ${y}px)`;
+        })
+    </script>
+</body>
+</html>
