@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A9</title>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-areas: "header" "main" "left" "right" "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: 80px 1fr 80px 80px 80px;
+            min-height: 100vh;
+        }
+        header {
+            background-color: orange;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: header;
+        }
+        .left {
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: left;
+        }
+        .right {
+            background-color: green;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: right;
+        }
+        main {
+            background-color: royalblue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: main;
+        }
+        footer {
+            background-color: hotpink;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-area: footer;
+        }
+        @media (min-width: 700px) {
+            .container {
+                grid-template-areas: "header header header" "left main right" "footer footer footer";
+                grid-template-columns: 200px 1fr 200px;
+                grid-template-rows: 80px 1fr 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <header>HEADER</header>
+    <aside class="left">LEFT SIDEBAR</aside>
+    <main>MAIN CONTENT</main>
+    <aside class="right">RIGHT SIDEBAR</aside>
+    <footer>FOOTER</footer>
+   </div>
+</body>
+</html>
