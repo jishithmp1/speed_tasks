@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A15</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 70%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .bottom {
+            margin-top: -60px;
+        }
+        .top, .bottom {
+            display: flex;
+            gap: 10px;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            border: 10px solid var(--c);
+            border-radius: 50%;
+            z-index: var(--z);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="circle" style="--c: #0081C8; --z: 1;"></div>
+            <div class="circle" style="--c: #000; --z: 3;"></div>
+            <div class="circle" style="--c: #EE334E; --z: 1;"></div>
+        </div>
+
+        <div class="bottom">
+            <div class="circle" style="--c: #FCB131; --z: 2;"></div>
+            <div class="circle" style="--c: #00A651; --z: 2;"></div>
+        </div>
+    </div>
+</body>
+</html>
