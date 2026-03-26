@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A17</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+        .scene {
+            perspective: 1000px;
+        }
+        .cube {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            color: white;
+            font-weight: bold;
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            50% {
+                transform: rotateX(0deg) rotateY(360deg);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .front {
+            background-color: #e1251b;
+            transform: translateZ(150px);
+        }
+        .back {
+            background-color: #e1251b;
+            transform: rotateY(180deg) translateZ(150px) ;
+        }
+        .left {
+            background-color: #f7e017;
+            transform: rotateY(-90deg) translateZ(150px) ;
+        }
+        .right {
+            background-color: #f7e017;
+            transform: rotateY(90deg) translateZ(150px) ;
+        }
+        .top {
+            background-color: #008c45;
+            transform: rotateX(90deg) translateZ(150px) ;
+        }
+        .bottom {
+            background-color: #008c45;
+            transform: rotateX(-90deg) translateZ(150px) ;
+        }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="cube">
+            <div class="face front">Communication and Interpersonal skills</div>
+            <div class="face back">Work organisation and management</div>
+            <div class="face left">Design implementation</div>
+            <div class="face right">Speed</div>
+            <div class="face top">Back-end Development</div>
+            <div class="face bottom">Front-end Development</div>
+        </div>
+    </div>
+</body>
+</html>
