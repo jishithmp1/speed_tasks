@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A12</title>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    const output = document.getElementById("output");
+    const texts = ['David Smith', 'Web Developer', 'Web Designer', 'Competitor of Worldskills'];
+
+    let j = 0, i = 0;
+
+    function type() {
+      if (j < texts[i].length) {
+        output.textContent += texts[i][j++];
+        setTimeout(type, 100);
+      } else {
+        setTimeout(() => {
+            j = 0;
+            i = (i + 1) % texts[i].length;
+            output.textContent = "";
+            type();
+        }, 1000);
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
