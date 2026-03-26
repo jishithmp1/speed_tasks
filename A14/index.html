@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A14 Ripple Zones</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #eee;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+.card .img {
+  width: 100px;
+  height: 100px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Zones */
+.zone {
+  position: absolute;
+  z-index: 0;
+  transition: all 0.5s ease-in-out;
+  background: transparent;
+  z-index: -1;
+}
+
+/* Positions */
+.top-left { top: 0; left: 0; width: 50%; height: 50%; background: #000;}
+.top-right { top: 0; right: 0; width: 50%; height: 50%; }
+.bottom-left { bottom: 0; left: 0; width: 50%; height: 50%; }
+.bottom-right { bottom: 0; right: 0; width: 50%; height: 50%; }
+
+/* Hover Effect */
+.zone:hover {
+  width: 100%;
+  height: 100%;
+  /* start with gradient */
+  background: linear-gradient(var(--d), rgba(245,35,140,0.875) 60%, white 100%);
+  transition: background 0.8s ease-in, width 0.5s ease, height 0.5s ease;
+}
+
+/* Make it fully pink after transition */
+.zone:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hotpink;
+  opacity: 0;
+  animation: fillPink 0.8s forwards;
+  animation-delay: 0.8s; /* start after gradient expands */
+}
+
+/* Animation keyframes */
+@keyframes fillPink {
+  to { opacity: 1; }
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="img">
+    <img src="cocoparisienne-cat-1045782_1920.jpg" alt="cat">
+  </div>
+  <h2>Title</h2>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem hic quam quisquam? Tenetur doloribus
+  vero est aperiam nam, nostrum sit id error officia, dolores quis dolorem? Excepturi assumenda odio quidem.</p>
+
+  <!-- Zones -->
+  <div class="zone top-left" style="--d: 135deg"></div>
+  <div class="zone top-right" style="--d: 235deg"></div>
+  <div class="zone bottom-left" style="--d: 45deg"></div>
+  <div class="zone bottom-right" style="--d: -45deg"></div>
+</div>
+</body>
+</html>
